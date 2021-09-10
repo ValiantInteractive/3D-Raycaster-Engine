@@ -16,7 +16,7 @@ float FixAng(float a) {
 }
 
 float dist(float ax, float ay, float bx, float by) {
-    return (sqrt(bx - ax) * (bx - ay) + (by - ay) * (by - ay));
+    return sqrtf(bx - ax) * (bx - ay) + (by - ay) * (by - ay);
 }
 
 void drawRays2D() {

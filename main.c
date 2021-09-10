@@ -57,8 +57,6 @@ void loadLevel(int level) {
 void drawMap2D() {
     int x, y, xo, yo;
 
-    glBegin(GL_QUADS);
-
     for (y = 0; y < mapY; y++) {
         for (x = 0; x < mapX; x++) {
             if (map[y * mapX + x] == 1) {
@@ -70,6 +68,7 @@ void drawMap2D() {
             xo = x * mapS;
             yo = y * mapS;
 
+            glBegin(GL_QUADS);
             glVertex2i(xo + 1, yo + 1);
             glVertex2i(xo + 1, yo + mapS - 1);
             glVertex2i(xo + mapS - 1, yo + mapS - 1);
