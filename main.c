@@ -25,33 +25,11 @@ void loadLevel(int level) {
     levels[2] = level2;
     levels[3] = level3;
 
-    switch (level)
-    {
-        case 1:
-            for (int y = 0; y < mapY; y++) {
-                for (int x = 0; x < mapX; x++) {
-                    map[y * mapX + x] = levels[1].map[y * mapX + x];
-                }
-            }
-            break;
-        case 2:
-            for (int y = 0; y < mapY; y++) {
-                for (int x = 0; x < mapX; x++) {
-                    map[y * mapX + x] = levels[2].map[y * mapX + x];
-                }
-            }
-            break;
-        case 3:
-            for (int y = 0; y < mapY; y++) {
-                for (int x = 0; x < mapX; x++) {
-                    map[y * mapX + x] = levels[3].map[y * mapX + x];
-                }
-            }
-            break;
-        default:
-            break;
+    for (int y = 0; y < mapY; y++) {
+        for (int x = 0; x < mapX; x++) {
+            map[y * mapX + x] = levels[level].map[y * mapX + x];
+        }
     }
-    free(levels);
 }
 
 void drawMap2D() {
@@ -187,7 +165,6 @@ int main(int argc, char *argv[]) {
     glutInitWindowSize(WIDTH, HEIGHT);
     glutCreateWindow("3D Engine");
     init();
-    loadLevel(1);
     glutKeyboardFunc(exitInput);
     glutSpecialFunc((void (*)(int, int, int)) ButtonDown);
     glutSpecialUpFunc((void (*)(int, int, int)) ButtonUp);
