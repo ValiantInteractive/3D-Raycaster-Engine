@@ -18,20 +18,6 @@ void drawPlayer() {
     glEnd();
 }
 
-void loadLevel(int level) {
-
-    Level* levels = malloc(3 * sizeof *levels);
-    levels[1] = level1;
-    levels[2] = level2;
-    levels[3] = level3;
-
-    for (int y = 0; y < mapY; y++) {
-        for (int x = 0; x < mapX; x++) {
-            map[y * mapX + x] = levels[level].map[y * mapX + x];
-        }
-    }
-}
-
 void drawMap2D() {
     int x, y, xo, yo;
 
