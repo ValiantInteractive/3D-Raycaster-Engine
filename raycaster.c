@@ -21,10 +21,6 @@ float FixAng(float a) {
     return a;
 }
 
-float dist(float ax, float ay, float bx, float by) {
-    return sqrtf(bx - ax) * (bx - ay) + (by - ay) * (by - ay);
-}
-
 void drawRays2D() {
     // Draw ceiling
     glColor3f(0.5f, 0.5f, 0.5f);
