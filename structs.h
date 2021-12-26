@@ -14,7 +14,7 @@ typedef struct {
     float posX, posY, deltaX, deltaY, angle;
 } Player;
 
-typedef struct {
+__attribute__((unused)) typedef struct {
     int map[64];
 } Level;
 
